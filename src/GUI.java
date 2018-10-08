@@ -1,3 +1,5 @@
+import javafx.embed.swing.JFXPanel;
+
 import javax.swing.*;
 import javax.swing.text.DefaultStyledDocument;
 
@@ -9,27 +11,27 @@ public class GUI {
     private JTextField typingArea;
     private static DefaultStyledDocument doc;
 
-    public GUI() {
+    GUI() {
         //Form file does all the work for us
     }
 
-    public JPanel getJPanel(){
+    JPanel getJPanel(){
         return panel;
     }
 
-    public JButton getStart(){
+    JButton getStart(){
         return start;
     }
 
-    public JButton getNext(){
+    JButton getNext(){
         return next;
     }
 
-    public JTextField getTypingArea(){
+    JTextField getTypingArea(){
         return typingArea;
     }
 
-    public JTextPane getTextPane(){
+    JTextPane getTextPane(){
         return textpane;
     }
 }
