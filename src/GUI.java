@@ -18,6 +18,7 @@ public class GUI {
     }
 
     public JButton getStart(){
+        //returns the start button
         return start;
     }
 
