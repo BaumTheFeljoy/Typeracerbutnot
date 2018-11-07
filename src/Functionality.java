@@ -20,6 +20,7 @@ public class Functionality {
     private int wordPos = 0;
     private int count = 0;
     private JLabel wpm;
+    private long startTime;
 
 
     public Functionality(){
@@ -34,8 +35,9 @@ public class Functionality {
         textpane = gui.getTextPane();
         next = gui.getNext();
         start = gui.getStart();
-        text = "<html>Milch Baum Katze wechseln Taschentuch Regenmantel rechnen Kunst klein selbstbestimmung" +
-                " ich du wieso der Autor kann tun was er will denn es ist seine Geschichte</html>";
+        /*text = "<html>Milch Baum Katze wechseln Taschentuch Regenmantel rechnen Kunst klein selbstbestimmung" +
+                " ich du wieso der Autor kann tun was er will denn es ist seine Geschichte</html>";*/
+        text = "<html>ich du wieso der Autor kann tun was er will denn es ist seine Geschichte</html>";
         adjText = text.replace("<html>", "").replace("</html>", "");
         wpm = gui.getWPMLabel();
         words = adjText.split("\\s+");
@@ -69,6 +71,7 @@ public class Functionality {
     }
 
     private void startTypeTest() {
+        startTime = System.currentTimeMillis();
         typingArea.setText("");
         typingArea.setFocusable(true);
         typingArea.requestFocusInWindow();
@@ -117,7 +120,11 @@ public class Functionality {
             next.requestFocusInWindow();
 //            System.out.println("yup");
             if(count == totalWords){
-//                System.out.println("yuuuup!");
+//                System.out.println("yuuuup!"); //this means that all words have been typed correctly
+                long elapsedTimeMillis = System.currentTimeMillis() - startTime;
+                float elapsedTimeSec = elapsedTimeMillis/1000F;
+                int wordsPM = Math.round((count/(elapsedTimeSec/60)));
+                wpm.setText("WPM: "+wordsPM);
                 count = 0;
                 typingArea.setFocusable(false);
             }
