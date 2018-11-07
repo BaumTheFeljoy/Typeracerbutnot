@@ -19,6 +19,7 @@ public class Functionality {
     private int totalWords;
     private int wordPos = 0;
     private int count = 0;
+    private JLabel wpm;
 
 
     public Functionality(){
@@ -33,8 +34,10 @@ public class Functionality {
         textpane = gui.getTextPane();
         next = gui.getNext();
         start = gui.getStart();
-        text = "<html>Milch Baum Katze wechseln Taschentuch</html>";
+        text = "<html>Milch Baum Katze wechseln Taschentuch Regenmantel rechnen Kunst klein selbstbestimmung" +
+                " ich du wieso der Autor kann tun was er will denn es ist seine Geschichte</html>";
         adjText = text.replace("<html>", "").replace("</html>", "");
+        wpm = gui.getWPMLabel();
         words = adjText.split("\\s+");
         totalWords = words.length;
         document = textpane.getStyledDocument();
