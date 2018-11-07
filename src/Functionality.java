@@ -120,7 +120,7 @@ public class Functionality {
             next.requestFocusInWindow();
 //            System.out.println("yup");
             if(count == totalWords){
-//                System.out.println("yuuuup!"); //this means that all words have been typed correctly
+//                System.out.println("yuuup!"); //this means that all words have been typed correctly
                 long elapsedTimeMillis = System.currentTimeMillis() - startTime;
                 float elapsedTimeSec = elapsedTimeMillis/1000F;
                 int wordsPM = Math.round((count/(elapsedTimeSec/60)));
